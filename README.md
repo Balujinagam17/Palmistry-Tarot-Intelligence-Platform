@@ -1,21 +1,71 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Palmistry & Tarot Intelligence Platform
 
-# Run and deploy your AI Studio app
+An AI-powered Palmistry & Tarot Intelligence Platform that combines palm image analysis, hand landmark detection, palm feature extraction, tarot readings, and integrated personalized insights.
 
-This contains everything you need to run your app locally.
+## Overview
 
-View your app in AI Studio: https://ai.studio/apps/3bcc919c-fb97-4ba8-b6f3-ae6c038d351c
+The platform allows users to:
 
-## Run Locally
+- Create and authenticate user accounts
+- Upload palm images
+- Analyze palm images using computer vision
+- Detect hand landmarks
+- Extract palm features
+- Perform palm-line analysis
+- Select and interpret Tarot cards
+- Combine palm and Tarot insights
+- Generate integrated life reports
+- View analysis history
+- Manage user profiles
 
-**Prerequisites:**  Node.js
+## Technology Stack
 
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
-"# Palmistry-Tarot-Intelligence-Platform" 
+### Backend
+- Python
+- FastAPI
+- SQLAlchemy
+- PostgreSQL
+- JWT Authentication
+
+### Computer Vision
+- OpenCV
+- MediaPipe
+
+### Machine Learning
+- YOLO
+- Palm feature detection
+- Hand landmark analysis
+- Computer vision-based feature extraction
+
+## Project Structure
+
+```text
+Palmistry-Tarot-Integrated/
+│
+├── backend/
+│   ├── app/
+│   ├── uploads/
+│   └── ...
+│
+├── src/
+│   ├── components/
+│   ├── data/
+│   ├── utils/
+│   ├── App.tsx
+│   └── types.ts
+│
+├── training/
+│   └── datasets/
+│
+├── public/
+│
+├── index.html
+├── package.json
+├── vite.config.ts
+└── README.md
