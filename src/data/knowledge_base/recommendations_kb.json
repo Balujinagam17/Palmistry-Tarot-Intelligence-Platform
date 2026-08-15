@@ -1,0 +1,61 @@
+{
+  "recommendations": {
+    "career": [
+      {
+        "id": "c1",
+        "title": "Establish High-Leverage Strategic Focus",
+        "action": "Delegate operational execution to focus 80% of mental bandwidth on long-term systemic expansion and high-value partnerships.",
+        "timeline": "Next 3 Months",
+        "impact": "High"
+      },
+      {
+        "id": "c2",
+        "title": "Monetize Intuitive Knowledge & Mastery",
+        "action": "Package your specialized domain insight into consultative offerings, proprietary frameworks, or digital IP assets.",
+        "timeline": "1 to 6 Months",
+        "impact": "Transformative"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "r1",
+        "title": "Cultivate Radical Emotional Clarity",
+        "action": "Communicate underlying core needs early in key partnerships. Establish firm boundary protocols to prevent energetic drain.",
+        "timeline": "Immediate",
+        "impact": "High"
+      },
+      {
+        "id": "r2",
+        "title": "Foster Shared Purpose & Mutual Growth",
+        "action": "Engage in collaborative creative or physical projects with partners to deepen emotional resonance.",
+        "timeline": "Ongoing",
+        "impact": "Medium"
+      }
+    ],
+    "wellness": [
+      {
+        "id": "w1",
+        "title": "Nervous System Grounding Protocol",
+        "action": "Incorporate daily 15-minute somatic grounding rituals (breathwork, cold plunge, barefoot earth contact) to balance high mental activity.",
+        "timeline": "Daily",
+        "impact": "High"
+      },
+      {
+        "id": "w2",
+        "title": "Circadian & Energy Alignment",
+        "action": "Align intense cognitive work with natural circadian peaks; avoid screen strain during late-night contemplation.",
+        "timeline": "Immediate",
+        "impact": "Medium"
+      }
+    ],
+    "finance": [
+      {
+        "id": "f1",
+        "title": "Diversified Multi-Channel Wealth Structure",
+        "action": "Allocate surplus liquidity across defensive yield assets, long-term equity, and strategic innovation projects.",
+        "timeline": "Next Quarter",
+        "impact": "High"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "archetypes": {
+    "luminary_visionary": {
+      "title": "The Luminary Visionary",
+      "element": "Fire / Air Synthesis",
+      "traits": "Driven, intuitive, highly creative, strategic, magnetic leader.",
+      "description": "Combines a sharp Head Line with fiery Tarot influences. Capable of spearheading innovative movements and inspiring communities.",
+      "ideal_roles": ["Founder / CEO", "Creative Director", "Architect of Systems", "Tech Pioneer"],
+      "radar": {
+        "intuition": 88,
+        "ambition": 94,
+        "empathy": 76,
+        "logic": 85,
+        "resilience": 90,
+        "creativity": 96
+      }
+    },
+    "mystic_healer": {
+      "title": "The Mystic Healer",
+      "element": "Water / Earth Synthesis",
+      "traits": "Profound empathy, psychic sensitivity, grounded nurture, calm aura.",
+      "description": "Grounded by deep Life & Heart lines with high Water element tarot alignment. Deeply attuned to human emotions and energetic subtle states.",
+      "ideal_roles": ["Holistic Practitioner", "Therapist & Counselor", "Community Leader", "Artist"],
+      "radar": {
+        "intuition": 96,
+        "ambition": 70,
+        "empathy": 98,
+        "logic": 72,
+        "resilience": 84,
+        "creativity": 92
+      }
+    },
+    "sovereign_strategist": {
+      "title": "The Sovereign Strategist",
+      "element": "Earth / Metal Synthesis",
+      "traits": "Disciplined execution, formidable logic, structural integrity, unwavering persistence.",
+      "description": "Features a prominent Fate line and square hand architecture. Thrives when establishing sustainable wealth, order, and high efficiency.",
+      "ideal_roles": ["Managing Partner", "Financial Strategist", "Lead Engineer", "Operations Director"],
+      "radar": {
+        "intuition": 74,
+        "ambition": 92,
+        "empathy": 68,
+        "logic": 98,
+        "resilience": 95,
+        "creativity": 78
+      }
+    },
+    "catalyst_pioneer": {
+      "title": "The Catalyst Pioneer",
+      "element": "Fire / Ether Synthesis",
+      "traits": "Risk-embracing, charismatic, fast-moving, intuitive, transformative.",
+      "description": "Marked by branched life lines and active major arcana draws. Unlocks breakthroughs in fast-changing environments.",
+      "ideal_roles": ["Venture Builder", "Explorer", "High-growth Strategist", "Innovator"],
+      "radar": {
+        "intuition": 90,
+        "ambition": 96,
+        "empathy": 80,
+        "logic": 80,
+        "resilience": 88,
+        "creativity": 94
+      }
+    }
+  }
+}

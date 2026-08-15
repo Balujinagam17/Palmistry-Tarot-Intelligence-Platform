@@ -1,0 +1,346 @@
+{
+  "deck_info": {
+    "name": "Celestial Mystic Arcana 78 Deck",
+    "total_cards": 78,
+    "major_arcana": 22,
+    "minor_arcana": 56
+  },
+  "cards": [
+    {
+      "id": "m00",
+      "name": "The Fool",
+      "arcana": "Major",
+      "number": 0,
+      "element": "Air",
+      "keywords": ["New Beginnings", "Innocence", "Spontaneity", "Free Spirit", "Infinite Potential"],
+      "meanings": {
+        "upright": {
+          "general": "A fresh leap of faith into unknown realms. Trust the journey and embrace unburdened beginnings.",
+          "career": "Inception of a venture, fresh innovation, taking calculated risks.",
+          "relationship": "Spontaneous romance, open-hearted connection without baggage.",
+          "finance": "New financial opportunities, unconventional income channels.",
+          "health": "Renewed physical energy, youthfulness, fresh health routines."
+        },
+        "reversed": {
+          "general": "Recklessness, fear of taking leaps, hesitation, or uncalculated risk-taking.",
+          "career": "Impetuous choices at work, lack of planning.",
+          "relationship": "Naivety in love, reluctance to commit.",
+          "finance": "Financial carelessness, impulsive spending.",
+          "health": "Exhaustion due to lack of grounding."
+        }
+      }
+    },
+    {
+      "id": "m01",
+      "name": "The Magician",
+      "arcana": "Major",
+      "number": 1,
+      "element": "Air",
+      "keywords": ["Manifestation", "Resourcefulness", "Power", "Inspired Action", "Skill"],
+      "meanings": {
+        "upright": {
+          "general": "All elements are in alignment. You hold the mental and spiritual tools to manifest your vision.",
+          "career": "Mastery of skills, successful project launch, decisive execution.",
+          "relationship": "Magnetic attraction, clear communication of intent.",
+          "finance": "Resourceful wealth building, turning skills into income.",
+          "health": "High vitality, self-healing capability, focused mental clarity."
+        },
+        "reversed": {
+          "general": "Unrealized potential, distraction, trickery, or self-doubt.",
+          "career": "Misused talents or lack of follow-through.",
+          "relationship": "Misaligned intentions or deceptive charm.",
+          "finance": "Get-rich-quick temptations.",
+          "health": "Mental fatigue from scattered focus."
+        }
+      }
+    },
+    {
+      "id": "m02",
+      "name": "The High Priestess",
+      "arcana": "Major",
+      "number": 2,
+      "element": "Water",
+      "keywords": ["Intuition", "Sacred Knowledge", "Divine Feminine", "Subconscious", "Inner Mystery"],
+      "meanings": {
+        "upright": {
+          "general": "The veiled portal to higher wisdom. Listen closely to dreams, subtle synchronicities, and gut feelings.",
+          "career": "Hidden insights revealing the ideal strategic path.",
+          "relationship": "Deep spiritual soul bond, quiet intuitive mutual understanding.",
+          "finance": "Keep financial plans confidential until fully matured.",
+          "health": "Trust your body's subtle signals; hormonal & emotional alignment."
+        },
+        "reversed": {
+          "general": "Ignoring inner guidance, secret motives, emotional detachment.",
+          "career": "Secrets in the workplace or unheeded intuition.",
+          "relationship": "Shallow communication or hidden agendas.",
+          "finance": "Unrevealed financial details.",
+          "health": "Repressed emotions causing tension."
+        }
+      }
+    },
+    {
+      "id": "m03",
+      "name": "The Empress",
+      "arcana": "Major",
+      "number": 3,
+      "element": "Earth",
+      "keywords": ["Abundance", "Nurturing", "Fertility", "Creativity", "Sensual Grace"],
+      "meanings": {
+        "upright": {
+          "general": "Overflowing creative power and material luxury. Earthly blessings and rich creation.",
+          "career": "Creative projects blossoming into highly lucrative ventures.",
+          "relationship": "Nurturing warmth, maternal grace, harmonious expansion.",
+          "finance": "Financial prosperity, comfortable growth, lush abundance.",
+          "health": "Radiant vitality, hormonal balance, physical rejuvenation."
+        },
+        "reversed": {
+          "general": "Creative block, smothering energy, dependence, or neglect.",
+          "career": "Stagnant creative growth or overwork.",
+          "relationship": "Over-dependence or lack of personal space.",
+          "finance": "Extravagant overspending.",
+          "health": "Depleted energy requiring self-care."
+        }
+      }
+    },
+    {
+      "id": "m04",
+      "name": "The Emperor",
+      "arcana": "Major",
+      "number": 4,
+      "element": "Fire",
+      "keywords": ["Authority", "Structure", "Stability", "Strategic Control", "Leadership"],
+      "meanings": {
+        "upright": {
+          "general": "Architect of order and sovereign command. Build firm structures and discipline.",
+          "career": "Executive leadership, managerial success, establishing order.",
+          "relationship": "Protective, stable partner providing solid support.",
+          "finance": "Structured budgeting, long-term asset building.",
+          "health": "Disciplined physical training, posture alignment, strength."
+        },
+        "reversed": {
+          "general": "Rigidity, abuse of power, chaos from lack of organization.",
+          "career": "Micromanagement or conflicts with authority figures.",
+          "relationship": "Dominating or overly inflexible dynamics.",
+          "finance": "Disorganized finances or loss of control.",
+          "health": "Stress-induced muscular rigidity or burnout."
+        }
+      }
+    },
+    {
+      "id": "m05",
+      "name": "The Hierophant",
+      "arcana": "Major",
+      "number": 5,
+      "element": "Earth",
+      "keywords": ["Spiritual Wisdom", "Tradition", "Mentorship", "Belief Systems", "Initiation"],
+      "meanings": {
+        "upright": {
+          "general": "Alignment with sacred lineage, proven frameworks, and ancestral mentorship.",
+          "career": "Institutional success, certifications, guided career advancement.",
+          "relationship": "Traditional commitment, shared core values.",
+          "finance": "Standard, time-tested investment approaches.",
+          "health": "Conforming to proven, traditional health regimens."
+        },
+        "reversed": {
+          "general": "Challenging dogma, seeking personal truth, breaking outdated rules.",
+          "career": "Unconventional work methods, rejecting rigid corporate norms.",
+          "relationship": "Redefining relationship rules beyond traditional expectations.",
+          "finance": "Alternative financial strategies (crypto, decentralized assets).",
+          "health": "Exploring holistic or non-traditional wellness methods."
+        }
+      }
+    },
+    {
+      "id": "m06",
+      "name": "The Lovers",
+      "arcana": "Major",
+      "number": 6,
+      "element": "Air",
+      "keywords": ["Harmony", "Sacred Choice", "Alignment", "Soul Commitment", "Values"],
+      "meanings": {
+        "upright": {
+          "general": "Synergy of soul and mind. A fundamental choice aligned with your highest authentic values.",
+          "career": "Harmonious business partnerships, career choices guided by passion.",
+          "relationship": "Deep romantic resonance, soulmate devotion, mutual trust.",
+          "finance": "Financial choices requiring value alignment.",
+          "health": "Mind-body harmony, emotional balance boosting physical health."
+        },
+        "reversed": {
+          "general": "Inner conflict, value mismatch, disharmony or indecision.",
+          "career": "Friction between co-founders or misalignment of values.",
+          "relationship": "Miscommunication or opposing life directions.",
+          "finance": "Conflicting financial priorities.",
+          "health": "Stress stemming from internal dilemmas."
+        }
+      }
+    },
+    {
+      "id": "m07",
+      "name": "The Chariot",
+      "arcana": "Major",
+      "number": 7,
+      "element": "Water",
+      "keywords": ["Willpower", "Triumph", "Determination", "Focus", "Victory Over Obstacles"],
+      "meanings": {
+        "upright": {
+          "general": "Harnessing opposing forces through focused willpower to drive toward decisive victory.",
+          "career": "Overcoming fierce competition, achieving major milestones.",
+          "relationship": "Conquering distance or hurdles together through shared momentum.",
+          "finance": "Directing financial drive toward aggressive debt payoff or wealth targets.",
+          "health": "High stamina, physical dominance, athletic triumphs."
+        },
+        "reversed": {
+          "general": "Loss of direction, aggression, feeling overwhelmed or out of control.",
+          "career": "Pushing too hard without strategy, burnout.",
+          "relationship": "Power struggles or erratic emotional direction.",
+          "finance": "Misdirected financial risks.",
+          "health": "Physical exhaustion due to relentless over-exertion."
+        }
+      }
+    },
+    {
+      "id": "m08",
+      "name": "Strength",
+      "arcana": "Major",
+      "number": 8,
+      "element": "Fire",
+      "keywords": ["Inner Power", "Compassion", "Patience", "Courage", "Gentle Mastery"],
+      "meanings": {
+        "upright": {
+          "general": "Soft power mastering instinctual fire. Taming difficulties through calm resilience and love.",
+          "career": "Handling high-stakes negotiations with quiet diplomacy.",
+          "relationship": "Patient unconditional support, emotional security.",
+          "finance": "Steadfast wealth management without panic.",
+          "health": "Vital recovery, resilient immune system, emotional poise."
+        },
+        "reversed": {
+          "general": "Self-doubt, raw emotional outbursts, feeling inadequate.",
+          "career": "Loss of confidence in professional settings.",
+          "relationship": "Insecurity causing friction.",
+          "finance": "Panic spending or financial anxiety.",
+          "health": "Depleted energy reserves requiring restorative rest."
+        }
+      }
+    },
+    {
+      "id": "m09",
+      "name": "The Hermit",
+      "arcana": "Major",
+      "number": 9,
+      "element": "Earth",
+      "keywords": ["Soul Searching", "Inner Light", "Solitude", "Wisdom", "Contemplation"],
+      "meanings": {
+        "upright": {
+          "general": "Retreating inward to illuminate the truth. Seeking clarity away from external noise.",
+          "career": "Strategic introspection, research, refining your true mastery.",
+          "relationship": "Taking space to understand personal soul needs.",
+          "finance": "Prudent austerity and careful review of assets.",
+          "health": "Detoxification, meditation, nervous system recovery."
+        },
+        "reversed": {
+          "general": "Isolation, loneliness, stubbornness, or avoiding reality.",
+          "career": "Withdrawal from team collaboration.",
+          "relationship": "Emotional unavailability or feeling alienated.",
+          "finance": "Hoarding or ignoring financial advice.",
+          "health": "Depressive isolation or neglecting social connection."
+        }
+      }
+    },
+    {
+      "id": "m10",
+      "name": "Wheel of Fortune",
+      "arcana": "Major",
+      "number": 10,
+      "element": "Fire",
+      "keywords": ["Karma", "Cycles", "Destiny", "Turning Point", "Inevitable Change"],
+      "meanings": {
+        "upright": {
+          "general": "Cosmic shifts opening new portals. Favorable turns of luck and karmic evolution.",
+          "career": "Sudden promotions, unexpected breakthroughs, favorable market momentum.",
+          "relationship": "Fated encounters, karmic relationship milestones.",
+          "finance": "Lucky financial turns, windfall gains.",
+          "health": "Positive shifts in vitality and recovery phases."
+        },
+        "reversed": {
+          "general": "Temporary setbacks, resisting inevitable cycles, bad timing.",
+          "career": "Uncontrollable market delays.",
+          "relationship": "Cyclic arguments or outer disruptions.",
+          "finance": "Unexpected expenses requiring adaptability.",
+          "health": "Minor setbacks requiring patience."
+        }
+      }
+    },
+    {
+      "id": "m17",
+      "name": "The Star",
+      "arcana": "Major",
+      "number": 17,
+      "element": "Air",
+      "keywords": ["Hope", "Inspiration", "Renewal", "Serenity", "Divine Blessing"],
+      "meanings": {
+        "upright": {
+          "general": "Luminous peace after the storm. Renewed faith, crystal vision, and inspiration.",
+          "career": "Creative acclaim, hopeful horizons, dream projects manifesting.",
+          "relationship": "Healing past heartbreak, deep peaceful romantic bond.",
+          "finance": "Promising long-term financial recovery and growth.",
+          "health": "Cellular regeneration, profound emotional peace, vitality."
+        },
+        "reversed": {
+          "general": "Lack of faith, pessimism, feeling drained.",
+          "career": "Disillusionment with work goals.",
+          "relationship": "Insecurity or loss of hope in love.",
+          "finance": "Short-term financial pessimism.",
+          "health": "Low mood or energetic depletion."
+        }
+      }
+    },
+    {
+      "id": "m19",
+      "name": "The Sun",
+      "arcana": "Major",
+      "number": 19,
+      "element": "Fire",
+      "keywords": ["Joy", "Success", "Radiance", "Vitality", "Truth"],
+      "meanings": {
+        "upright": {
+          "general": "Unrivaled brilliance, joy, and truth. Everything comes into radiant light.",
+          "career": "Major triumph, public accolades, peak leadership success.",
+          "relationship": "Pure happiness, vibrant warmth, open celebration.",
+          "finance": "Abundant wealth flow, fruitful endeavors.",
+          "health": "Peak physical fitness, vibrant health, high spirits."
+        },
+        "reversed": {
+          "general": "Temporary cloudiness, over-enthusiasm, delayed gratification.",
+          "career": "Minor delays in recognition.",
+          "relationship": "Slight miscommunication amidst underlying warmth.",
+          "finance": "Profits coming slightly later than predicted.",
+          "health": "Need for sun exposure and mood balance."
+        }
+      }
+    },
+    {
+      "id": "m21",
+      "name": "The World",
+      "arcana": "Major",
+      "number": 21,
+      "element": "Earth",
+      "keywords": ["Completion", "Integration", "Fulfillment", "Global Vision", "Wholeness"],
+      "meanings": {
+        "upright": {
+          "general": "The grand cycle completes in perfection. Wholeness, global connection, and absolute mastery.",
+          "career": "Mastery of a major era, international expansion, grand achievement.",
+          "relationship": "Complete harmony, mutual fulfillment, joint life milestones.",
+          "finance": "Financial security, diversified global assets.",
+          "health": "Total physical, mental, and energetic integration."
+        },
+        "reversed": {
+          "general": "Incomplete business, lingering ties, reluctance to close a chapter.",
+          "career": "Almost at the finish line; needs final push.",
+          "relationship": "Unresolved loose ends from past relationships.",
+          "finance": "Minor delays in finalizing deals.",
+          "health": "Incomplete recovery cycle needing patience."
+        }
+      }
+    }
+  ]
+}

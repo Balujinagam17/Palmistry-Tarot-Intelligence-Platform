@@ -1,0 +1,161 @@
+{
+  "lines": {
+    "life_line": {
+      "name": "Life Line",
+      "description": "Represents vitality, physical health, major life events, and foundational energy.",
+      "variations": {
+        "deep_long": {
+          "title": "Deep & Long Arc",
+          "meaning": "Exceptional vitality, strong immune resilience, grounded physical presence, and steady long-term endurance.",
+          "score_boost": { "health": 25, "resilience": 20 }
+        },
+        "curved_around_thumb": {
+          "title": "Wide Sweep Around Venus Mount",
+          "meaning": "High enthusiasm for life, deep emotional capacity, warmth, and strong ancestral protection.",
+          "score_boost": { "relationships": 20, "vitality": 20 }
+        },
+        "chained_or_faint": {
+          "title": "Chained or Feathered Pattern",
+          "meaning": "Fluctuating physical energy, heightened sensitivity to stress, requiring structured rest and holistic balance.",
+          "score_boost": { "intuition": 15, "sensitivity": 25 }
+        },
+        "branched_upward": {
+          "title": "Upward Branching Offshoots",
+          "meaning": "Periods of self-initiated breakthroughs, career ambition triumphs, and rising personal autonomy.",
+          "score_boost": { "career": 25, "ambition": 20 }
+        }
+      }
+    },
+    "head_line": {
+      "name": "Head Line",
+      "description": "Reflects cognitive style, intellectual focus, decision-making, and psychological flexibility.",
+      "variations": {
+        "straight_clear": {
+          "title": "Straight & Extended Across Palm",
+          "meaning": "Analytical clarity, pragmatic problem solving, logical rigor, and high focus under pressure.",
+          "score_boost": { "logic": 25, "career": 20 }
+        },
+        "sloping_downward": {
+          "title": "Curved Toward Mount of Moon",
+          "meaning": "Vivid imagination, creative synthesis, artistic talent, and strong intuitive reasoning.",
+          "score_boost": { "creativity": 25, "intuition": 20 }
+        },
+        "forked_writer_fork": {
+          "title": "Forked Terminal (Writer's Fork)",
+          "meaning": "Dual mental capacity—combining practical business acumen with imaginative creative vision.",
+          "score_boost": { "creativity": 20, "finance": 20 }
+        }
+      }
+    },
+    "heart_line": {
+      "name": "Heart Line",
+      "description": "Gauges emotional depth, romantic affinity, empathy, and interpersonal connection style.",
+      "variations": {
+        "curving_to_jupiter": {
+          "title": "Curving Upward to Index Finger (Jupiter)",
+          "meaning": "Idealistic romantic values, profound empathy, loyalty, and generous emotional expression.",
+          "score_boost": { "relationships": 25, "empathy": 25 }
+        },
+        "straight_horizontal": {
+          "title": "Straight Across Mounts",
+          "meaning": "Controlled emotional expression, realistic boundaries, self-reliant feelings, and steady calm.",
+          "score_boost": { "resilience": 20, "logic": 15 }
+        },
+        "wavy_or_branched": {
+          "title": "Multi-Branched or Wavy Flow",
+          "meaning": "Dynamic social charm, deep emotional versatility, passionate engagement, and intense artistic sensitivity.",
+          "score_boost": { "creativity": 15, "relationships": 20 }
+        }
+      }
+    },
+    "fate_line": {
+      "name": "Fate Line (Destiny Line)",
+      "description": "Indicates career focus, life orientation, sense of purpose, and external environmental alignment.",
+      "variations": {
+        "strong_straight": {
+          "title": "Strong & Unbroken Vertical Line",
+          "meaning": "Clear vocation early in life, strong leadership capability, sustained professional momentum.",
+          "score_boost": { "career": 30, "ambition": 25 }
+        },
+        "originating_from_moon": {
+          "title": "Originating from Mount of Moon",
+          "meaning": "Success driven by public appeal, creative arts, counseling, or unconventional path choices.",
+          "score_boost": { "creativity": 20, "finance": 20 }
+        },
+        "absent_or_faint": {
+          "title": "Faint or Emerging Line",
+          "meaning": "Unbound free-spirit path, adaptable career shifts, self-made destiny reliant on personal choice.",
+          "score_boost": { "resilience": 15, "adaptability": 25 }
+        }
+      }
+    },
+    "sun_line": {
+      "name": "Sun Line (Apollo Line)",
+      "description": "Governs fame, artistic brilliance, public prestige, and financial luck.",
+      "variations": {
+        "clear_prominent": {
+          "title": "Clear & Parallel to Fate Line",
+          "meaning": "High magnetic charisma, public recognition, artistic acclaim, and prosperous financial yields.",
+          "score_boost": { "finance": 25, "creativity": 20 }
+        },
+        "multiple_parallel": {
+          "title": "Multiple Parallel Sun Lines",
+          "meaning": "Multitalented persona, successful multi-income channels, versatility across creative disciplines.",
+          "score_boost": { "finance": 20, "creativity": 25 }
+        }
+      }
+    },
+    "marriage_line": {
+      "name": "Marriage Line (Relationship Mark)",
+      "description": "Reveals long-term partnership commitments and emotional milestones.",
+      "variations": {
+        "single_deep": {
+          "title": "Single Deep & Unbroken Line",
+          "meaning": "Profound lifelong soulmate bond, stability in romantic unions, mutual respect.",
+          "score_boost": { "relationships": 25 }
+        },
+        "upward_curved": {
+          "title": "Upward Curving Toward Mercury",
+          "meaning": "Prosperous union that elevates social and financial standing.",
+          "score_boost": { "relationships": 20, "finance": 15 }
+        }
+      }
+    }
+  },
+  "shapes": {
+    "earth": {
+      "type": "Earth Hand",
+      "traits": "Square palm, short fingers. Grounded, practical, reliable, connected to tangible outcomes and nature.",
+      "element": "Earth",
+      "strengths": ["Dependability", "Physical Endurance", "Pragmatic Mindset"],
+      "focus": "Practical execution and physical wellness."
+    },
+    "air": {
+      "type": "Air Hand",
+      "traits": "Square palm, long fingers. Intellectual, communicative, analytical, curious, articulate.",
+      "element": "Air",
+      "strengths": ["Clear Communication", "Rapid Synthesis", "Strategic Planning"],
+      "focus": "Intellectual pursuits and innovative systems."
+    },
+    "fire": {
+      "type": "Fire Hand",
+      "traits": "Long rectangular palm, short fingers. Energetic, passionate, charismatic, adventurous, driven.",
+      "element": "Fire",
+      "strengths": ["Leadership Charisma", "High Initiative", "Courageous Drive"],
+      "focus": "Ambition, public leadership, and bold ventures."
+    },
+    "water": {
+      "type": "Water Hand",
+      "traits": "Long rectangular palm, long flexible fingers. Intuitive, empathetic, creative, deeply perceptive.",
+      "element": "Water",
+      "strengths": ["Empathy", "Psychic Intuition", "Artistic Depth"],
+      "focus": "Emotional mastery, artistic creation, and healing."
+    }
+  },
+  "finger_structures": {
+    "conical": "Adaptable, sensitive, expressive, naturally drawn to art and design.",
+    "square": "Systematic, orderly, punctual, valuing structure and proven methodologies.",
+    "spatulate": "Inventive, energetic, pioneering, thriving on physical activity and discovery.",
+    "pointed": "High spiritual alignment, delicate perception, deeply mystical outlook."
+  }
+}

@@ -1,0 +1,119 @@
+Folder PATH listing for volume Windows
+Volume serial number is 00000157 0A23:1500
+C:\USERS\HAKSH\DESKTOP\PALMISTRY-TAROT-INTELLIGENCE-PLATFORM\BACKEND\APP
+¦   main.py
+¦   __init__.py
+¦   
++---api
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---v1
+¦   ¦   ¦   analytics.py
+¦   ¦   ¦   auth.py
+¦   ¦   ¦   palm.py
+¦   ¦   ¦   profile.py
+¦   ¦   ¦   recommendation.py
+¦   ¦   ¦   reports.py
+¦   ¦   ¦   tarot.py
+¦   ¦   ¦   users.py
+¦   ¦   ¦   __init__.py
+¦   ¦   ¦   
+¦   ¦   +---__pycache__
+¦   ¦           auth.cpython-310.pyc
+¦   ¦           profile.cpython-310.pyc
+¦   ¦           users.cpython-310.pyc
+¦   ¦           __init__.cpython-310.pyc
+¦   ¦           
+¦   +---__pycache__
+¦           __init__.cpython-310.pyc
+¦           
++---core
+¦   ¦   config.py
+¦   ¦   security.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           config.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---database
+¦   ¦   base.py
+¦   ¦   mongodb.py
+¦   ¦   postgres.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           postgres.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---db
+¦   ¦   database.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           database.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---dependencies
+¦   ¦   auth.py
+¦   ¦   role.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           auth.cpython-310.pyc
+¦           role.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---middleware
+¦       __init__.py
+¦       
++---models
+¦   ¦   role.py
+¦   ¦   user.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           user.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---repositories
+¦   ¦   user_repository.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           user.cpython-310.pyc
+¦           user_repository.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---schemas
+¦   ¦   auth.py
+¦   ¦   user.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           auth.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---services
+¦   ¦   auth_service.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           auth.cpython-310.pyc
+¦           auth_service.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---utils
+¦   ¦   jwt.py
+¦   ¦   password.py
+¦   ¦   __init__.py
+¦   ¦   
+¦   +---__pycache__
+¦           jwt.cpython-310.pyc
+¦           password.cpython-310.pyc
+¦           __init__.cpython-310.pyc
+¦           
++---__pycache__
+        main.cpython-310.pyc
+        __init__.cpython-310.pyc
+        

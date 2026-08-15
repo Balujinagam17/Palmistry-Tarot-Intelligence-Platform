@@ -1,0 +1,69 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+# Python virtual environments
+venv/
+.venv/
+env/
+venv311/
+backend/venv311/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+
+# Large datasets / archives
+*.zip
+*.rar
+*.7z
+
+# Node
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+# Training datasets
+training/datasets/
+datasets/
+
+# Backend uploaded images
+backend/uploads/
+
+# Large archive files
+*.zip
+*.rar
+*.7z
+
+# Python virtual environments
+venv/
+.venv/
+env/
+venv311/
+backend/venv311/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+
+# Node dependencies
+node_modules/
+backend_ai_studio_backup/

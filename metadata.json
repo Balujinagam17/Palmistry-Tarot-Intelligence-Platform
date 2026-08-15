@@ -1,0 +1,6 @@
+{
+  "name": "Palmistry & Tarot Intelligence Platform",
+  "description": "Aetheria AI Palmistry & Tarot Sanctuary delivering real-time palmistry vision analysis, 78 Tarot Arcana spreads, and unified personal growth guidance reports.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
