@@ -3,7 +3,7 @@
 This repository contains the complete production-ready application architecture for the **Palmistry & Tarot Intelligence Platform**.
 
 > ⚠️ **IMPORTANT NOTE FOR DEVELOPERS & DATA SCIENTISTS**:
-> AI model weight files are **NOT** pre-packaged in this platform repository. The AI model training scripts included in `training/` are structured as **clean code skeletons** with configuration settings, folder paths, and TODO sections. You will train all AI models manually outside AI Studio after downloading the repository.
+> AI model weight files are **NOT** pre-packaged in this platform repository. The AI model training scripts included in `training/` are structured as **clean code skeletons** with configuration settings, folder paths, and TODO sections.> AI model weight files are not pre-packaged in this repository. The AI model training scripts included in `training/` provide the configuration, folder structure, dataset paths, and training workflow required to train the models separately.
 
 ---
 
@@ -85,6 +85,7 @@ Open the corresponding script in `training/` and implement your custom training 
 After implementing your training pipelines:
 
 1. **Execute Training**:
+
    ```bash
    python training/train_palm_detection.py
    python training/train_palm_lines.py
@@ -107,6 +108,7 @@ After implementing your training pipelines:
 ## ⚙️ 5. How the Backend Loads Model Weights
 
 1. Model weight file paths are specified in `backend/.env`:
+
    ```env
    PALM_MODEL_PATH=backend/models/palm_detection/best.pt
    LINE_MODEL_PATH=backend/models/palm_line_detection/line_model.pth
