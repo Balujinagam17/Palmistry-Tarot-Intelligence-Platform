@@ -161,7 +161,7 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
       }
 
       /*
-       * STEP 1 — Upload image
+       * STEP 1 ΓÇö Upload image
        */
       const uploadResult = await uploadPalmImage(file, token);
 
@@ -174,14 +174,14 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
       }
 
       /*
-       * STEP 2 — Analyze uploaded image
+       * STEP 2 ΓÇö Analyze uploaded image
        */
       const result = await analyzePalmImage(uploadResult.id, token);
 
       console.log("Palm analysis successful:", result);
 
       /*
-       * STEP 3 — Normalize backend response
+       * STEP 3 ΓÇö Normalize backend response
        */
       const rawResult = result as BackendPalmAnalysis & {
         data?: BackendPalmAnalysis | null;
@@ -214,7 +214,7 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
       setBackendAnalysis(normalizedBackendResult);
 
       /*
-       * STEP 4 — Preserve existing frontend state
+       * STEP 4 ΓÇö Preserve existing frontend state
        */
       const frontendResult = convertBackendResultToFrontendResult(
         normalizedBackendResult,
@@ -277,17 +277,6 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
     setError(null);
 
     analyzeFileWithBackend(file, previewUrl);
-  };
-
-  /*
-   * ---------------------------------------------------------
-   * Sample Palm
-   * ---------------------------------------------------------
-   */
-  const loadDefaultSamplePalm = () => {
-    setError(
-      "The sample palm is only a frontend demo image. Please upload a real palm photograph for backend analysis.",
-    );
   };
 
   /*
@@ -655,12 +644,6 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
         </div>
 
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            onClick={loadDefaultSamplePalm}
-            className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-cyan-300 text-xs font-mono font-bold border border-cyan-500/30 transition-all cursor-pointer"
-          >
-            Load Sample Palm
-          </button>
 
           <label className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 text-xs font-bold font-mono transition-all shadow-lg flex items-center gap-2 cursor-pointer">
             <Upload className="w-4 h-4" />
@@ -727,7 +710,7 @@ export const PalmScannerView: React.FC<PalmScannerViewProps> = ({
                   : "text-amber-400"
               }`}
             >
-              {isVideoReady ? "● CAMERA READY" : "● STARTING CAMERA..."}
+              {isVideoReady ? "ΓùÅ CAMERA READY" : "ΓùÅ STARTING CAMERA..."}
             </span>
           </div>
 

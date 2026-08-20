@@ -90,17 +90,21 @@ export default function App() {
       }
 
       try {
-        const response = await fetch(`${API_BASE_URL}/api/v1/profile/me`, {
-          method: "GET",
-
-          headers: {
-            Accept: "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const response = await fetch(
+          `${API_BASE_URL}/api/v1/profile/me`,
+          {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
 
         if (!response.ok) {
-          throw new Error(`Profile request failed: ${response.status}`);
+          throw new Error(
+            `Profile request failed: ${response.status}`
+          );
         }
 
         const profile = await response.json();
@@ -112,15 +116,27 @@ export default function App() {
         setUser((previousUser) => ({
           ...previousUser,
 
-          id: profile.id !== undefined ? String(profile.id) : previousUser.id,
+          id:
+            profile.id !== undefined
+              ? String(profile.id)
+              : previousUser.id,
 
-          name: profile.full_name || profile.name || previousUser.name,
+          name:
+            profile.full_name ||
+            profile.name ||
+            previousUser.name,
 
-          email: profile.email || previousUser.email,
+          email:
+            profile.email ||
+            previousUser.email,
 
-          role: profile.role || previousUser.role,
+          role:
+            profile.role ||
+            previousUser.role,
 
-          createdAt: profile.created_at || previousUser.createdAt,
+          createdAt:
+            profile.created_at ||
+            previousUser.createdAt,
         }));
       } catch (error) {
         console.error("Profile loading error:", error);
@@ -128,6 +144,7 @@ export default function App() {
         localStorage.removeItem("access_token");
 
         setIsLoggedIn(false);
+        setReadingsHistory([]);
       }
     };
 
@@ -135,11 +152,242 @@ export default function App() {
   }, []);
 
   // =========================================================
+  // LOAD PALM HISTORY FROM FASTAPI
+  // =========================================================
+
+  useEffect(() => {
+    const loadPalmHistory = async () => {
+      if (!isLoggedIn) {
+        return;
+      }
+
+      const token = localStorage.getItem("access_token");
+
+      if (!token) {
+        console.warn("No access token available for history.");
+        return;
+      }
+
+      try {
+        console.log("Loading palm analysis history...");
+
+        const response = await fetch(
+          `${API_BASE_URL}/api/v1/palm/history`,
+          {
+            method: "GET",
+            headers: {
+              Accept: "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          console.error(
+            "History request failed:",
+            response.status
+          );
+
+          if (response.status === 401) {
+            console.warn(
+              "History request unauthorized. Token may be invalid."
+            );
+          }
+
+          return;
+        }
+
+        const result = await response.json();
+
+        console.log("Backend palm history response:", result);
+
+        /*
+         * Backend response:
+         *
+         * {
+         *   status: "success",
+         *   count: number,
+         *   data: [...]
+         * }
+         */
+
+        const backendRecords = Array.isArray(result?.data)
+          ? result.data
+          : [];
+
+        /*
+         * Convert backend palm records into the existing
+         * IntegratedReadingReport structure used by the UI.
+         *
+         * The backend currently stores palm analysis records,
+         * while the frontend history component expects
+         * IntegratedReadingReport objects.
+         */
+
+        const convertedHistory =
+          backendRecords.map(
+            (record: any, index: number) => {
+              const interpretation =
+                record?.interpretation || {};
+
+              const timestamp =
+                record?.created_at ||
+                record?.timestamp ||
+                record?.updated_at ||
+                new Date().toISOString();
+
+              const palmClass =
+                record?.palm_class ||
+                record?.palmClass ||
+                record?.hand ||
+                "Palm Analysis";
+
+              const title =
+                "Palm Analysis";
+
+              const archetypeTitle =
+                record?.hand
+                  ? `${record.hand} Hand`
+                  : "Palm Reading";
+
+              const report: any = {
+                id:
+                  record?.id !== undefined
+                    ? String(record.id)
+                    : `palm-${index}`,
+
+                title,
+
+                timestamp,
+
+                spiritualGuidanceScore:
+                  Number(
+                    record?.spiritual_guidance_score ??
+                    record?.spiritualGuidanceScore ??
+                    92
+                  ),
+
+                archetype: {
+                  title: archetypeTitle,
+                },
+
+                palmAnalysis: {
+                  palmClass,
+                  hand:
+                    record?.hand ||
+                    "Unknown",
+
+                  features:
+                    record?.features ||
+                    {},
+
+                  interpretation,
+
+                  classifiedLines:
+                    record?.classified_lines ||
+                    record?.classifiedLines ||
+                    [],
+
+                  lines:
+                    record?.lines ||
+                    [],
+                },
+
+                tarotSpread:
+                  record?.tarotSpread ||
+                  record?.tarot_spread ||
+                  undefined,
+
+                personality:
+                  interpretation?.personality ||
+                  "Palm analysis completed.",
+
+                love:
+                  interpretation?.love ||
+                  "",
+
+                intelligence:
+                  interpretation?.intelligence ||
+                  "",
+
+                health:
+                  interpretation?.health ||
+                  "",
+
+                career:
+                  interpretation?.career ||
+                  "",
+
+                summary:
+                  interpretation?.summary ||
+                  "Palm analysis completed successfully.",
+
+                userId:
+                  record?.user_id !== undefined
+                    ? String(record.user_id)
+                    : "",
+
+                imagePath:
+                  record?.image_path ||
+                  "",
+              };
+
+              return report as IntegratedReadingReport;
+            }
+          );
+
+        /*
+         * Backend normally returns newest records first.
+         * Sort again here so the newest analysis appears first.
+         */
+
+        convertedHistory.sort(
+          (a: IntegratedReadingReport, b: IntegratedReadingReport) => {
+            return (
+              new Date(b.timestamp).getTime() -
+              new Date(a.timestamp).getTime()
+            );
+          }
+        );
+
+        setReadingsHistory(convertedHistory);
+
+        /*
+         * Keep dashboard/latest reading synchronized.
+         */
+
+        if (convertedHistory.length > 0) {
+          setLatestReport(convertedHistory[0]);
+        }
+
+        console.log(
+          "Converted history records:",
+          convertedHistory.length
+        );
+      } catch (error) {
+        console.error(
+          "Palm history loading error:",
+          error
+        );
+      }
+    };
+
+    loadPalmHistory();
+  }, [isLoggedIn]);
+
+  // =========================================================
   // LOGIN SUCCESS
   // =========================================================
 
-  const handleLoginSuccess = (name: string, email: string, token: string) => {
-    localStorage.setItem("access_token", token);
+  const handleLoginSuccess = (
+    name: string,
+    email: string,
+    token: string
+  ) => {
+    localStorage.setItem(
+      "access_token",
+      token
+    );
 
     setIsLoggedIn(true);
 
@@ -178,7 +426,9 @@ export default function App() {
   // UPDATE USER
   // =========================================================
 
-  const handleUpdateUser = (updatedProps: Partial<UserProfile>) => {
+  const handleUpdateUser = (
+    updatedProps: Partial<UserProfile>
+  ) => {
     setUser((previousUser) => ({
       ...previousUser,
       ...updatedProps,
@@ -187,29 +437,47 @@ export default function App() {
 
   // =========================================================
   // SAVE INTEGRATED REPORT
-  //
-  // IMPORTANT:
-  // The current FastAPI backend does not yet expose
-  // /api/readings/save.
-  //
-  // Therefore we keep the report in React state for now.
-  // We will connect this to the real backend after the
-  // Tarot + Integrated Reading backend modules are connected.
   // =========================================================
 
-  const handleSaveReport = (report: IntegratedReadingReport) => {
+  const handleSaveReport = (
+    report: IntegratedReadingReport
+  ) => {
     setLatestReport(report);
 
-    setReadingsHistory((previousHistory) => [report, ...previousHistory]);
+    setReadingsHistory((previousHistory) => {
+      /*
+       * Avoid duplicate entries if the same report is
+       * already present.
+       */
 
-    console.log("Integrated report stored in frontend state:", report);
+      const alreadyExists =
+        previousHistory.some(
+          (item) => item.id === report.id
+        );
+
+      if (alreadyExists) {
+        return previousHistory;
+      }
+
+      return [
+        report,
+        ...previousHistory,
+      ];
+    });
+
+    console.log(
+      "Integrated report stored in frontend state:",
+      report
+    );
   };
 
   // =========================================================
   // OPEN AUTH MODAL
   // =========================================================
 
-  const openAuth = (mode: "login" | "register") => {
+  const openAuth = (
+    mode: "login" | "register"
+  ) => {
     setAuthMode(mode);
 
     setAuthModalOpen(true);
@@ -221,6 +489,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#080b14] text-slate-100 font-sans selection:bg-cyan-500 selection:text-black flex flex-col justify-between">
+
       {/* =====================================================
           NAVBAR
       ====================================================== */}
@@ -239,9 +508,8 @@ export default function App() {
       ====================================================== */}
 
       <main className="max-w-7xl mx-auto px-4 lg:px-8 pt-6 w-full flex-grow">
-        {/* ===================================================
-            HOME
-        ==================================================== */}
+
+        {/* HOME */}
 
         {activeTab === "home" && (
           <LandingPageView
@@ -261,67 +529,76 @@ export default function App() {
 
               setActiveTab("tarot_sanctuary");
             }}
-            onOpenPricing={() => setActiveTab("pricing")}
+            onOpenPricing={() =>
+              setActiveTab("pricing")
+            }
             onOpenAuth={openAuth}
           />
         )}
 
-        {/* ===================================================
-            DASHBOARD
-        ==================================================== */}
+        {/* DASHBOARD */}
 
         {activeTab === "dashboard" && (
           <DashboardView
             user={user}
             setActiveTab={setActiveTab}
-            recentReport={latestReport || readingsHistory[0]}
+            recentReport={
+              latestReport ||
+              readingsHistory[0]
+            }
           />
         )}
 
-        {/* ===================================================
-            PALM SCANNER
-        ==================================================== */}
+        {/* PALM SCANNER */}
 
         {activeTab === "palm_scanner" && (
           <PalmScannerView
             onAnalysisComplete={(analysis) => {
-              setCurrentPalmAnalysis(analysis);
+              setCurrentPalmAnalysis(
+                analysis
+              );
             }}
             setActiveTab={setActiveTab}
-            currentAnalysis={currentPalmAnalysis}
+            currentAnalysis={
+              currentPalmAnalysis
+            }
           />
         )}
 
-        {/* ===================================================
-            TAROT
-        ==================================================== */}
+        {/* TAROT */}
 
         {activeTab === "tarot_sanctuary" && (
           <TarotSanctuaryView
             onSpreadComplete={(spread) => {
-              setCurrentTarotSpread(spread);
+              setCurrentTarotSpread(
+                spread
+              );
             }}
             setActiveTab={setActiveTab}
-            currentSpread={currentTarotSpread}
+            currentSpread={
+              currentTarotSpread
+            }
           />
         )}
 
-        {/* ===================================================
-            INTEGRATED READING
-        ==================================================== */}
+        {/* INTEGRATED READING */}
 
         {activeTab === "integrated_reading" && (
           <IntegratedReadingView
             user={user}
-            palmAnalysis={currentPalmAnalysis}
-            tarotSpread={currentTarotSpread}
-            onSaveReport={handleSaveReport}
+            palmAnalysis={
+              currentPalmAnalysis
+            }
+            tarotSpread={
+              currentTarotSpread
+            }
+            onSaveReport={
+              handleSaveReport
+            }
           />
         )}
 
-        {/* ===================================================
-            HISTORY
-        ==================================================== */}
+        {/* HISTORY */}
 
         {activeTab === "history_analytics" && (
           <AnalyticsHistoryView
@@ -329,14 +606,14 @@ export default function App() {
             onSelectReport={(report) => {
               setLatestReport(report);
 
-              setActiveTab("integrated_reading");
+              setActiveTab(
+                "integrated_reading"
+              );
             }}
           />
         )}
 
-        {/* ===================================================
-            PRICING
-        ==================================================== */}
+        {/* PRICING */}
 
         {activeTab === "pricing" && (
           <LandingPageView
@@ -354,51 +631,66 @@ export default function App() {
                 return;
               }
 
-              setActiveTab("tarot_sanctuary");
+              setActiveTab(
+                "tarot_sanctuary"
+              );
             }}
-            onOpenPricing={() => setActiveTab("pricing")}
+            onOpenPricing={() =>
+              setActiveTab("pricing")
+            }
             onOpenAuth={openAuth}
           />
         )}
 
-        {/* ===================================================
-            PROFILE
-        ==================================================== */}
+        {/* PROFILE */}
 
         {activeTab === "profile" && (
           <ProfileSettingsView
             user={user}
-            onUpdateUser={handleUpdateUser}
-            onOpenPricing={() => setActiveTab("pricing")}
+            onUpdateUser={
+              handleUpdateUser
+            }
+            onOpenPricing={() =>
+              setActiveTab("pricing")
+            }
           />
         )}
 
-        {/* ===================================================
-            PRIVACY
-        ==================================================== */}
+        {/* PRIVACY */}
 
         {activeTab === "privacy" && (
-          <LegalPagesView page="privacy" onBack={() => setActiveTab("home")} />
+          <LegalPagesView
+            page="privacy"
+            onBack={() =>
+              setActiveTab("home")
+            }
+          />
         )}
 
-        {/* ===================================================
-            TERMS
-        ==================================================== */}
+        {/* TERMS */}
 
         {activeTab === "terms" && (
-          <LegalPagesView page="terms" onBack={() => setActiveTab("home")} />
+          <LegalPagesView
+            page="terms"
+            onBack={() =>
+              setActiveTab("home")
+            }
+          />
         )}
+
       </main>
 
-      {/* =====================================================
-          AUTH MODAL
-      ====================================================== */}
+      {/* AUTH MODAL */}
 
       <AuthModal
         isOpen={authModalOpen}
         initialMode={authMode}
-        onClose={() => setAuthModalOpen(false)}
-        onLoginSuccess={handleLoginSuccess}
+        onClose={() =>
+          setAuthModalOpen(false)
+        }
+        onLoginSuccess={
+          handleLoginSuccess
+        }
       />
     </div>
   );
